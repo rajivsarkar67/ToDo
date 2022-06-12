@@ -1,0 +1,13 @@
+<!-- Binds with note content with two-way data binding -->
+<input type="text" placeholder="Enter your note here" [(ngModel)] = "newNote.content"/>
+<!-- Disabled button when note's content is empty -->
+<button class="addBtn" (click) = "addBtnClick()" [disabled]="!newNote.content">Add</button>
+<!-- <button class="addBtn" (click) = "addBtnClick()">Add</button> -->
+<br>
+
+<ul *ngFor="let note of notesArr">
+    <div class="note">
+        <li>{{note[1]}}</li>
+        <button class="delBtn" (click)="delBtnClick($event)" name={{note[0]}}>Delete</button>
+    </div>
+</ul>
